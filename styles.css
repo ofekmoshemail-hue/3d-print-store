@@ -1,0 +1,329 @@
+/* ===== GENERAL STYLES ===== */
+
+* {
+    box-sizing: border-box;    /* Makes sizing easier to work with */
+}
+
+body {
+    font-family: 'Inter', sans-serif;   /* Modern Google Font */
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #1a1a2e;
+    line-height: 1.6;          /* More breathing room between lines */
+}
+
+/* ===== NAVIGATION BAR ===== */
+
+nav {
+    background-color: #1a1a2e;           /* Deep dark navy */
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;                     /* Stays at top when scrolling */
+    top: 0;
+    z-index: 100;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;              /* Tighter letters = modern feel */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.7);     /* Slightly transparent */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;            /* ALL CAPS links */
+    letter-spacing: 1px;
+    transition: color 0.3s;               /* Smooth color change */
+}
+
+nav a:hover {
+    color: #e94560;                       /* Coral red on hover */
+}
+
+/* Cart link in the nav */
+#cart-link {
+    color: #e94560;
+    font-weight: 600;
+}
+
+/* ===== CART DROPDOWN ===== */
+
+.cart-wrapper {
+    position: relative;       /* So the dropdown positions relative to this */
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    color: #1a1a2e;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 280px;
+    z-index: 200;
+}
+
+.cart-dropdown h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.cart-dropdown.hidden {
+    display: none;            /* Hides the dropdown until you click Cart */
+}
+
+.cart-empty {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Each item row in the cart */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.cart-item-name {
+    font-weight: 500;
+}
+
+.cart-item-price {
+    color: #888;
+}
+
+/* The remove "X" button */
+.remove-btn {
+    background: none;
+    border: none;
+    color: #e94560;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0 4px;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
+}
+
+.remove-btn:hover {
+    opacity: 0.6;
+}
+
+/* ===== HERO / HEADER SECTION ===== */
+
+header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);  /* Gradient! */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+header h2 {
+    font-family: 'Lilita One', cursive;   /* Bubble-style font */
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    animation: slideUp 0.8s ease-out;          /* Slides up into view */
+}
+
+header p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+    animation: slideUp 0.8s ease-out 0.2s;     /* Same animation, starts 0.2s later */
+    animation-fill-mode: both;
+}
+
+header .btn {
+    animation: slideUp 0.8s ease-out 0.4s;     /* Button comes in last */
+    animation-fill-mode: both;
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* Slides element up from below while fading in */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== BUTTONS ===== */
+
+.btn {
+    display: inline-block;
+    background-color: #e94560;            /* Coral red */
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;                  /* Pill shape */
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;                 /* Smooth hover effect */
+}
+
+.btn:hover {
+    background-color: #c53a50;
+    transform: translateY(-2px);          /* Lifts up slightly */
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);  /* Glowing shadow */
+}
+
+.btn-small {
+    padding: 10px 24px;
+    font-size: 13px;
+    width: 100%;
+}
+
+/* ===== SECTIONS ===== */
+
+section {
+    max-width: 960px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* Colored underline accent */
+section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #e94560;
+    border-radius: 2px;
+}
+
+/* ===== PRODUCT CARDS ===== */
+
+.product-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    width: 270px;
+    text-align: center;
+    position: relative;                   /* Needed for the badge */
+    border: 1px solid #eee;
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);          /* Floats up on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* "Popular" badge */
+.badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: #e94560;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-image {
+    background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+    height: 180px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.product-card h3 {
+    margin: 10px 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.product-desc {
+    font-size: 13px;
+    color: #888;
+    margin: 0 0 12px;
+}
+
+.price {
+    color: #e94560;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0 16px;
+}
+
+/* ===== ABOUT & CONTACT ===== */
+
+#about p,
+#contact p {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #1a1a2e;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    font-size: 14px;
+}

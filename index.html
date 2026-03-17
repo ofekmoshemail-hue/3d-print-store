@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My 3D Print Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font - gives us a clean, modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar at the top -->
+    <nav>
+        <h1>3D Print Studio</h1>
+        <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="cart-wrapper">
+                <a href="#" id="cart-link">Cart (<span id="cart-count">0</span>) - $<span id="cart-total">0.00</span></a>
+                <!-- This dropdown appears when you click Cart -->
+                <div id="cart-dropdown" class="cart-dropdown hidden">
+                    <h3>Your Cart</h3>
+                    <div id="cart-items">
+                        <p class="cart-empty">Your cart is empty</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero section - the big welcome area -->
+    <header>
+        <h2>Custom 3D Printed Items Made With Care</h2>
+        <p>Unique designs, printed just for you.</p>
+        <a href="#products" class="btn">Browse Products</a>
+    </header>
+
+    <!-- Products section -->
+    <section id="products">
+        <h2>Featured Products</h2>
+        <div class="product-list">
+            <!-- Products get loaded here by JavaScript! -->
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm passionate about 3D printing and creating useful, beautiful items. Every product is designed and printed by me with attention to detail.</p>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Interested in a custom order? Reach out!</p>
+        <p>Email: your@email.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>My 3D Print Shop - 2026</p>
+    </footer>
+
+    <!-- JavaScript goes at the bottom so the HTML loads first -->
+    <script src="script.js"></script>
+</body>
+</html>
