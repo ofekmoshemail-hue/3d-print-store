@@ -25,7 +25,11 @@ async function fetchProducts() {
 // ===== GLOBAL VARIABLES =====
 
 let products = [];   // Starts empty — gets filled when data loads
-let cart = [];
+
+// Load cart from localStorage (so it survives page refresh!)
+// localStorage stores text, so we use JSON.parse to turn it back into an array
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// ↑ This says: "Get 'cart' from storage. If nothing is there, use an empty array []"
 
 // ===== CART FUNCTIONS =====
 
@@ -53,9 +57,18 @@ function getCartTotal() {
     return total;
 }
 
+// ===== SAVE CART =====
+// Every time the cart changes, save it to localStorage
+// JSON.stringify turns the array into text (localStorage only stores text)
+
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 // ===== UPDATE CART DISPLAY =====
 
 function updateCartDisplay() {
+    saveCart();  // Save to localStorage every time the display updates
     document.querySelector("#cart-count").textContent = cart.length;
     document.querySelector("#cart-total").textContent = getCartTotal().toFixed(2);
 
@@ -150,3 +163,6 @@ async function loadStore() {
 
 // Start the store!
 loadStore();
+
+// Show any saved cart items right away (don't wait for products to load)
+updateCartDisplay();
