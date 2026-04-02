@@ -136,6 +136,16 @@ function displayProducts(productList) {
     });
 }
 
+// ===== SEARCH / FILTER =====
+
+document.querySelector("#search-bar").addEventListener("input", function() {
+    let searchText = this.value.toLowerCase();
+    let filtered = products.filter(function(product) {
+        return product.name.toLowerCase().includes(searchText);
+    });
+    displayProducts(filtered);
+});
+
 // ===== CART DROPDOWN TOGGLE =====
 
 document.querySelector("#cart-link").addEventListener("click", function(e) {
@@ -150,6 +160,7 @@ document.querySelector("#cart-link").addEventListener("click", function(e) {
 
 async function loadStore() {
     // Show a loading message while we wait
+
     document.querySelector(".product-list").innerHTML = '<p style="text-align:center; color:#888;">Loading products...</p>';
 
     // Fetch the products (waits 1 second)

@@ -236,6 +236,25 @@ section h2::after {
     border-radius: 2px;
 }
 
+/* ===== SEARCH BAR ===== */
+
+#search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#search-bar:focus {
+    border-color: #e94560;
+}
+
 /* ===== PRODUCT CARDS ===== */
 
 .product-list {
