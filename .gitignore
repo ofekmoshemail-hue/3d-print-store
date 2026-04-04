@@ -3,4 +3,3 @@ node_modules/
 .env.local
 .DS_Store
 .claude/
-my-3d-store/
